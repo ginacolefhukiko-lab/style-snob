@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>STYLE SNOB — Streetwear</title>
+
+  <meta name="description" content="STYLE SNOB — bold streetwear for people who set the tone. Discover oversized essentials, urban fits and everyday street style.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f4f0;
+      color: #111;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(244, 244, 240, 0.96);
+      border-bottom: 1px solid #111;
+      backdrop-filter: blur(10px);
+    }
+
+    .nav {
+      max-width: 1400px;
+      margin: auto;
+      height: 76px;
+      padding: 0 25px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 18px;
+      font-size: 20px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 720px;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.05)),
+        url("https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      color: white;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .hero-content {
+      max-width: 1400px;
+      width: 100%;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 {
+      font-size: clamp(60px, 12vw, 150px);
+      line-height: .82;
+      letter-spacing: -7px;
+      max-width: 1000px;
+      text-transform: uppercase;
+    }
+
+    .hero p {
+      max-width: 500px;
+      margin: 30px 0;
+      font-size: 17px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #111;
+      padding: 16px 28px;
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      border: 1px solid white;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      background: transparent;
+      color: white;
+    }
+
+    /* MARQUEE */
+
+    .marquee {
+      overflow: hidden;
+      background: #111;
+      color: white;
+      border-bottom: 1px solid #111;
+      white-space: nowrap;
+    }
+
+    .marquee-track {
+      display: inline-block;
+      padding: 16px 0;
+      animation: move 18s linear infinite;
+      font-size: 15px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+
+    @keyframes move {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* SECTIONS */
+
+    section {
+      max-width: 1400px;
+      margin: auto;
+      padding: 90px 25px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #111;
+      padding-bottom: 18px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(38px, 6vw, 78px);
+      line-height: .9;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+    }
+
+    .section-head span {
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+
+    .category {
+      min-height: 430px;
+      position: relative;
+      overflow: hidden;
+      background: #ddd;
+    }
+
+    .category img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s;
+    }
+
+    .category:hover img {
+      transform: scale(1.06);
+    }
+
+    .category-info {
+      position: absolute;
+      left: 25px;
+      bottom: 25px;
+      color: white;
+    }
+
+    .category-info h3 {
+      font-size: 38px;
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .category-info p {
+      margin-top: 7px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    /* PRODUCTS */
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+    }
+
+    .product {
+      position: relative;
+    }
+
+    .product-image {
+      aspect-ratio: 3 / 4;
+      overflow: hidden;
+      background: #ddd;
+      position: relative;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .45s;
+    }
+
+    .product:hover img {
+      transform: scale(1.05);
+    }
+
+    .tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #111;
+      color: white;
+      padding: 6px 9px;
+      font-size: 10px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      padding: 15px 0 30px;
+    }
+
+    .product-name {
+      font-size: 15px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .product-price {
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    /* MANIFESTO */
+
+    .manifesto {
+      background: #111;
+      color: white;
+      max-width: none;
+      padding: 110px 25px;
+    }
+
+    .manifesto-inner {
+      max-width: 1400px;
+      margin: auto;
+    }
+
+    .manifesto h2 {
+      font-size: clamp(50px, 9vw, 125px);
+      line-height: .82;
+      letter-spacing: -6px;
+      text-transform: uppercase;
+      max-width: 1100px;
+    }
+
+    .manifesto p {
+      max-width: 600px;
+      margin-top: 35px;
+      font-size: 17px;
+      color: #ccc;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter {
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-size: clamp(42px, 7vw, 90px);
+      line-height: .9;
+      letter-spacing: -4px;
+      text-transform: uppercase;
+    }
+
+    .newsletter p {
+      max-width: 500px;
+      margin: 20px auto 30px;
+    }
+
+    .subscribe {
+      display: flex;
+      max-width: 550px;
+      margin: auto;
+      border-bottom: 1px solid #111;
+    }
+
+    .subscribe input {
+      flex: 1;
+      border: 0;
+      background: transparent;
+      padding: 15px 0;
+      outline: none;
+      font-size: 15px;
+    }
+
+    .subscribe button {
+      border: 0;
+      background: transparent;
+      font-weight: 900;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #111;
+      color: white;
+      padding: 60px 25px 30px;
+    }
+
+    .footer-grid {
+      max-width: 1400px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+
+    footer h3 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    footer h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      display: block;
+      color: #bbb;
+      font-size: 13px;
+      margin-bottom: 9px;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      max-width: 1400px;
+      margin: 50px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 11px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav {
+        height: 65px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero h1 {
+        letter-spacing: -4px;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+
+      .category {
+        min-height: 400px;
+      }
+
+      .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .section-head {
+        align-items: start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      section {
+        padding: 65px 16px;
+      }
+
+      .hero-content {
+        padding: 55px 16px;
+      }
+
+      .hero h1 {
+        font-size: 58px;
+      }
+
+      .products {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .product-name {
+        font-size: 12px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">STYLE SNOB®</a>
+
+      <div class="nav-links">
+        <a href="#new">New</a>
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <div class="nav-icons">
+        <span>⌕</span>
+        <span>♡</span>
+        <span>▢</span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main>
+
+    <div class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Style Snob — New Collection</div>
+
+        <h1>Set<br>The<br>Tone.</h1>
+
+        <p>
+          Bold streetwear for people who don't follow the crowd.
+          Wear your attitude. Make your statement.
+        </p>
+
+        <a href="#shop" class="btn">Shop the collection →</a>
+      </div>
+    </div>
+
+    <!-- MARQUEE -->
+    <div class="marquee">
+      <div class="marquee-track">
+        STYLE SNOB ★ STREET CULTURE ★ NO RULES ★ EVERYDAY ATTITUDE ★
+        STYLE SNOB ★ STREET CULTURE ★ NO RULES ★ EVERYDAY ATTITUDE ★
+        STYLE SNOB ★ STREET CULTURE ★ NO RULES ★ EVERYDAY ATTITUDE ★
+      </div>
+    </div>
+
+    <!-- CATEGORIES -->
+    <section id="new">
+
+      <div class="section-head">
+        <h2>Explore</h2>
+        <span>01 — Collections</span>
+      </div>
+
+      <div class="categories">
+
+        <a href="#shop" class="category">
+          <img
+            src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1000&q=85"
+            alt="Streetwear collection">
+          <div class="category-info">
+            <h3>Hoodies</h3>
+            <p>Heavyweight essentials →</p>
+          </div>
+        </a>
+
+        <a href="#shop" class="category">
+          <img
+            src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1000&q=85"
+            alt="Streetwear t-shirts">
+          <div class="category-info">
+            <h3>Tees</h3>
+            <p>Everyday statements →</p>
+          </div>
+        </a>
+
+        <a href="#shop" class="category">
+          <img
+            src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=85"
+            alt="Streetwear sneakers">
+          <div class="category-info">
+            <h3>Footwear</h3>
+            <p>Finish the fit →</p>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section id="shop">
+
+      <div class="section-head">
+        <h2>Latest<br>Drops</h2>
+        <span>02 — New arrivals</span>
+      </div>
+
+      <div class="products">
+
+        <article class="product">
+          <div class="product-image">
+            <span class="tag">New</span>
+            <img
+              src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85"
+              alt="Oversized hoodie">
+          </div>
+          <div class="product-info">
+            <div class="product-name">Essential Oversized Hoodie</div>
+            <div class="product-price">₱1,499</div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <span class="tag">Drop 01</span>
+            <img
+              src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85"
+              alt="Graphic t-shirt">
+          </div>
+          <div class="product-info">
+            <div class="product-name">Snob Graphic Tee</div>
+            <div class="product-price">₱799</div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <img
+              src="https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=900&q=85"
+              alt="Streetwear jacket">
+          </div>
+          <div class="product-info">
+            <div class="product-name">Urban Utility Jacket</div>
+            <div class="product-price">₱1,999</div>
+          </div>
+        </article>
+
+        <article class="product">
+          <div class="product-image">
+            <span class="tag">Limited</span>
+            <img
+              src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?auto=format&fit=crop&w=900&q=85"
+              alt="Streetwear clothing">
+          </div>
+          <div class="product-info">
+            <div class="product-name">After Dark Tee</div>
+            <div class="product-price">₱899</div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- MANIFESTO -->
+    <section class="manifesto" id="about">
+      <div class="manifesto-inner">
+
+        <div class="eyebrow">03 — Our attitude</div>
+
+        <h2>
+          Don't dress<br>
+          for approval.
+        </h2>
+
+        <p>
+          STYLE SNOB is built around individuality, confidence and
+          street culture. We make pieces designed to become part
+          of your everyday uniform — loud when you want them to be,
+          effortless when you don't.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter" id="contact">
+
+      <div class="eyebrow">04 — Stay in the loop</div>
+
+      <h2>Join the<br>Snob List.</h2>
+
+      <p>
+        Get new drops, style inspiration and exclusive updates
+        straight to your inbox.
+      </p>
+
+      <form class="subscribe" onsubmit="subscribeUser(event)">
+        <input
+          type="email"
+          placeholder="YOUR EMAIL ADDRESS"
+          required>
+        <button type="submit">JOIN →</button>
+      </form>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="footer-grid">
+
+      <div>
+        <h3>STYLE SNOB®</h3>
+        <p style="color:#aaa; max-width:330px;">
+          Bold streetwear for people who set the tone.
+          Built for the streets. Made for your style.
+        </p>
+      </div>
+
+      <div>
+        <h4>Shop</h4>
+        <a href="#shop">New Arrivals</a>
+        <a href="#shop">T-Shirts</a>
+        <a href="#shop">Hoodies</a>
+        <a href="#shop">Accessories</a>
+      </div>
+
+      <div>
+        <h4>Info</h4>
+        <a href="#about">About Us</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQ</a>
+      </div>
+
+      <div>
+        <h4>Follow</h4>
+        <a href="#">Instagram</a>
+        <a href="#">TikTok</a>
+        <a href="#">Facebook</a>
+        <a href="#">Pinterest</a>
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 STYLE SNOB®. All rights reserved.
+    </div>
+
+  </footer>
+
+  <script>
+    function subscribeUser(event) {
+      event.preventDefault();
+
+      const email = event.target.querySelector("input").value;
+
+      alert(
+        "Thanks for joining STYLE SNOB! " +
+        email +
+        " has been added to our list."
+      );
+
+      event.target.reset();
+    }
+  </script>
+
+</body>
+  </html>
